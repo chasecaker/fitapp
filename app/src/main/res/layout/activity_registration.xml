@@ -21,13 +21,9 @@
             android:contentDescription="@string/description_ic_arrow_back"/>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/ViewHeaderStyle"
             android:layout_gravity="center_vertical"
-            android:text="@string/title_registration"
-            android:textSize="20sp"
-            android:fontFamily="@font/inter_semi_bold"
-            android:textColor="@color/text_dark"/>
+            android:text="@string/title_registration" />
     </LinearLayout>
 
     <ScrollView
@@ -39,7 +35,7 @@
             android:id="@+id/main"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:context=".WelcomeActivity">
+            tools:context=".features.login.WelcomeActivity">
 
             <LinearLayout
                 android:id="@+id/linearLayout"

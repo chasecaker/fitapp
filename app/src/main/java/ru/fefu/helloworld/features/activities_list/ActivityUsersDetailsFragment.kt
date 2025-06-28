@@ -1,0 +1,39 @@
+package ru.fefu.helloworld.features.activities_list
+
+import android.graphics.Paint
+import android.os.Bundle
+import android.text.InputType
+import android.view.View
+import androidx.core.content.ContextCompat
+import androidx.core.view.isVisible
+import ru.fefu.helloworld.R
+import com.google.android.material.textfield.TextInputLayout
+import com.google.android.material.textfield.TextInputLayout.BoxBackgroundMode
+
+class ActivityUsersDetailsFragment: ActivityDetailsFragment() {
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        with (super.binding) {
+            ivDelete.isVisible = false
+
+            ivShare.isVisible = false
+
+            tvUser.paintFlags = Paint.UNDERLINE_TEXT_FLAG
+
+            tilComment.boxBackgroundMode = TextInputLayout.BOX_BACKGROUND_NONE
+            tilComment.isHintEnabled = false
+            tilComment.isFocusable = false
+            tilComment.isFocusableInTouchMode = false
+
+            tfComment.isCursorVisible = false
+            tfComment.keyListener = null
+            tfComment.inputType = InputType.TYPE_CLASS_TEXT or InputType.TYPE_TEXT_FLAG_MULTI_LINE
+            tfComment.minLines = 1
+            tfComment.maxLines = 5
+            tfComment.setText("В прострации")
+            tfComment.setTextColor(ContextCompat.getColor(requireContext(), R.color.text_grey))
+            tfComment.setBackgroundColor(ContextCompat.getColor(requireContext(), R.color.background_text_input_grey))
+        }
+    }
+}

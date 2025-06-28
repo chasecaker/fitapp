@@ -1,4 +1,4 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.features.profile
 
 import android.os.Bundle
 import android.view.LayoutInflater

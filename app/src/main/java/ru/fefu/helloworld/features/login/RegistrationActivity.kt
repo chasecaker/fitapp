@@ -1,4 +1,4 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.features.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -12,6 +12,8 @@ import android.view.View.OnClickListener
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
+import ru.fefu.helloworld.ui.ActivityActivity
+import ru.fefu.helloworld.R
 import ru.fefu.helloworld.databinding.ActivityRegistrationBinding
 
 class RegistrationActivity : AppCompatActivity() {

@@ -1,10 +1,12 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.features.activities_list
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import ru.fefu.helloworld.R
+import ru.fefu.helloworld.ui.TabPagerAdapter
 import ru.fefu.helloworld.databinding.FragmentActivityBinding
 import com.google.android.material.tabs.TabLayoutMediator
 

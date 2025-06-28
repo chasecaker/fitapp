@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <style name="ViewHeaderStyle">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/inter_semi_bold</item>
+        <item name="android:color">@color/text_dark</item>
+    </style>
+
     <style name="MaterialButtonStyle" parent="@style/Widget.MaterialComponents.Button.TextButton">
         <item name="android:paddingTop">12dp</item>
         <item name="android:paddingBottom">12dp</item>
@@ -33,7 +41,7 @@
         <item name="android:inputType">textPassword</item>
     </style>
 
-    <style name="TabTextStyle" parent="TextAppearance.AppCompat">Add commentMore actions
+    <style name="TabTextStyle" parent="TextAppearance.AppCompat">
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/inter_medium</item>
     </style>
@@ -41,5 +49,15 @@
     <style name="BottomNavigationTextStyle" parent="Widget.MaterialComponents.BottomNavigationView">
         <item name="android:textSize">12sp</item>
         <item name="android:fontFamily">@font/inter_regular</item>
+    </style>
+
+    <style name="FABStyle" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="shapeAppearanceOverlay">@style/Shape.FAB.Circular</item>
+        <item name="elevation">6dp</item>
+        <item name="backgroundTint">@color/blue</item>
+    </style>
+
+    <style name="Shape.FAB.Circular" parent="ShapeAppearance.Material3.SmallComponent">
+        <item name="cornerSize">50%</item>
     </style>
 </resources>

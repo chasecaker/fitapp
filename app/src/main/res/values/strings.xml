@@ -23,9 +23,15 @@
     <string name="hint_nickname">Имя или никнейм</string>
     <string name="hint_password">Пароль</string>
     <string name="hint_password_repeat">Повторите пароль</string>
+    <string name="hint_comment">Комментарий</string>
 
+    <string name="description_fab">Начать новую активность</string>
     <string name="decription_ic_welcome_bicycles">Велосипеды</string>
     <string name="description_ic_arrow_back">Вернуться назад</string>
+
+    <string name="activity_details_start">Старт</string>
+    <string name="activity_details_divider">|</string>
+    <string name="activity_details_finish">Финиш</string>
 
     <string name="caption_registration">
         Нажимая на кнопку, вы соглашаетесь \n с политикой

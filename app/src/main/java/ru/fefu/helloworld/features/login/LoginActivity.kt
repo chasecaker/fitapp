@@ -1,8 +1,9 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.features.login
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ru.fefu.helloworld.ui.ActivityActivity
 import ru.fefu.helloworld.databinding.ActivityLoginBinding
 
 class LoginActivity: AppCompatActivity() {

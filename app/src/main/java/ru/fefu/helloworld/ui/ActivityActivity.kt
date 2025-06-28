@@ -1,9 +1,12 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import ru.fefu.helloworld.R
 import ru.fefu.helloworld.databinding.ActivityActivityBinding
+import ru.fefu.helloworld.features.activities_list.ActivityFragment
+import ru.fefu.helloworld.features.profile.ProfileFragment
 
 object ActivityFragmentsTags {
     const val ACTIVITY_FRAGMENT = "ActivityFragment"
@@ -29,9 +32,8 @@ object ActivityFragmentsTags {
                 if (profileFragment != null) {
                     this.show(profileFragment)
                 } else {
-                    this.add(
-                        R.id.fragmentContainerView,
-                        ProfileFragment(),
+                    add(
+                            R.id.fragmentContainerView, ProfileFragment(),
                         ActivityFragmentsTags.PROFILE_FRAGMENT
                     )
                 }
@@ -52,9 +54,8 @@ object ActivityFragmentsTags {
                 if (activityFragment != null) {
                     this.show(activityFragment)
                 } else {
-                    this.add(
-                        R.id.fragmentContainerView,
-                        ActivityFragment(),
+                    add(
+                            R.id.fragmentContainerView, ActivityFragment(),
                         ActivityFragmentsTags.ACTIVITY_FRAGMENT
                     )
                 }
@@ -66,8 +67,7 @@ object ActivityFragmentsTags {
                 if (savedInstanceState == null) {
                     supportFragmentManager.beginTransaction()
                         .add(
-                            R.id.fragmentContainerView,
-                            ActivityFragment(),
+                                R.id.fragmentContainerView,  ActivityFragment(),
                             ActivityFragmentsTags.ACTIVITY_FRAGMENT
                         )
                         .commit()

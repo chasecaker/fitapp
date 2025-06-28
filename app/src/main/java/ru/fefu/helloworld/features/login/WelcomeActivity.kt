@@ -1,4 +1,4 @@
-package ru.fefu.helloworld
+package ru.fefu.helloworld.features.login
 
 import android.content.Intent
 import android.os.Bundle

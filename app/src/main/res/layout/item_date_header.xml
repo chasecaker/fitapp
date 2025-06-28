@@ -2,11 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_marginTop="24dp">
 
     <TextView
-        android:id="@+id/tvDayListTitle"
+        android:id="@+id/tvItemDateHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Вчера"
@@ -14,9 +14,4 @@
         android:fontFamily="@font/inter_regular"
         android:textColor="@color/text_grey"/>
 
-    <androidx.fragment.app.FragmentContainerView
-        android:id="@+id/first"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:name="ru.fefu.helloworld.ActivityItemFragment"/>
 </LinearLayout>
