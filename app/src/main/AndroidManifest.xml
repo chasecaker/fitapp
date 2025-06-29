@@ -24,6 +24,7 @@
         <activity android:name=".features.login.RegistrationActivity" />
         <activity android:name=".features.login.LoginActivity"/>
         <activity android:name=".ui.ActivityActivity"/>
+        <activity android:name=".features.activity_new.ActivityActivityNew"/>
     </application>
 
 </manifest>

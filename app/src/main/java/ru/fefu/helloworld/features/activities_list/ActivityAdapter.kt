@@ -8,9 +8,9 @@ import ru.fefu.helloworld.databinding.ItemActivityEntryBinding
 import ru.fefu.helloworld.databinding.ItemDateHeaderBinding
 
 class ActivityAdapter(
-public val isMy: Boolean,
-                      private val items: List<ActivityItem>,
-                      private val onActivityClick: () -> Unit
+    val isMy: Boolean,
+    private val items: List<ActivityItem>,
+    private val onActivityClick: () -> Unit
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         private const val VIEW_TYPE_DATE = 0

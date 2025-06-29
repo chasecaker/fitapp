@@ -8,7 +8,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.view.isVisible
 import ru.fefu.helloworld.R
 import com.google.android.material.textfield.TextInputLayout
-import com.google.android.material.textfield.TextInputLayout.BoxBackgroundMode
 
 class ActivityUsersDetailsFragment: ActivityDetailsFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

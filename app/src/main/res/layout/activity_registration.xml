@@ -7,24 +7,27 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp">
 
         <ImageView
             android:id="@+id/ic_go_back"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:layout_margin="16dp"
-            android:src="@drawable/ic_arrow_back"
-            android:contentDescription="@string/description_ic_arrow_back"/>
+            style="@style/IconReturnStyle"
+            android:contentDescription="@string/description_ic_arrow_back"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            style="@style/ViewHeaderStyle"
-            android:layout_gravity="center_vertical"
-            android:text="@string/title_registration" />
-    </LinearLayout>
+            style="@style/TextHeaderStyle"
+            android:layout_marginStart="16dp"
+            android:text="@string/title_registration"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ic_go_back"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -91,14 +94,10 @@
             </LinearLayout>
 
             <TextView
+                style="@style/TextHeaderStyle"
                 android:id="@+id/textView4"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="4dp"
-                android:fontFamily="@font/inter_semi_bold"
                 android:text="@string/title_sex"
-                android:textColor="@color/text_dark"
-                android:textSize="20sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
 
@@ -142,15 +141,12 @@
                 app:layout_constraintTop_toBottomOf="@+id/linearLayout2" />
 
             <TextView
+                style="@style/TextStyle"
                 android:id="@+id/tvCaptionRegistration"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:fontFamily="@font/inter_regular"
-                android:text="@string/caption_registration"
                 android:textAlignment="center"
-                android:textColor="@color/text_dark"
                 android:textSize="12sp"
+                android:text="@string/caption_registration"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
                 app:layout_constraintStart_toStartOf="parent"

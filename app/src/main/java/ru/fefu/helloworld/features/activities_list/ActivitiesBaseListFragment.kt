@@ -20,12 +20,14 @@ abstract class ActivitiesBaseListFragment: Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        super.onCreateView(inflater, container, savedInstanceState)
         _binding = FragmentActivitiesListBinding.inflate(inflater, container, false)
 
         return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         adapter = ActivityAdapter(true, listOf()) {
             onActivityClick()
         }
