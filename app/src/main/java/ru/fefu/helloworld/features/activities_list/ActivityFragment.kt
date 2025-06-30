@@ -16,6 +16,9 @@ class ActivityFragment: Fragment() {
     private var _binding: FragmentActivityBinding? = null
     private val binding
         get() = _binding ?: throw IllegalStateException("FragmentActivityBinding is null")
+    companion object {
+        const val FRAGMENT_TAG = "ActivityFragment"
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,

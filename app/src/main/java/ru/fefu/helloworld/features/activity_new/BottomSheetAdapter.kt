@@ -1,13 +1,19 @@
 package ru.fefu.helloworld.features.activity_new
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
+import ru.fefu.helloworld.R
+import ru.fefu.helloworld.data.enums.ActivityType
 import ru.fefu.helloworld.databinding.ItemActivityTypeBinding
+import com.google.android.material.card.MaterialCardView
 
 class BottomSheetAdapter(
-private val items: List<String>
+    private val items: List<ActivityType>
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+    private var _selectedPosition: Int = 0
 
     class BottomSheetViewHolder(private val binding: ItemActivityTypeBinding):
         RecyclerView.ViewHolder(binding.root) {
@@ -27,7 +33,30 @@ private val items: List<String>
         return items.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as BottomSheetViewHolder).bind(items[position])
+    private fun setCardColorBorder(holder: RecyclerView.ViewHolder, position: Int) {
+        val card = holder.itemView as MaterialCardView
+        val context = holder.itemView.context
+        val color = if (position == _selectedPosition)
+            ContextCompat.getColor(context, R.color.blue) else
+            ContextCompat.getColor(context, R.color.border_card_grey)
+
+        card.strokeColor = color
+    }
+
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, @SuppressLint("RecyclerView") position: Int) {
+        setCardColorBorder(holder, position)
+
+        holder.itemView.setOnClickListener {
+            val previousPosition = _selectedPosition
+            _selectedPosition = position
+            notifyItemChanged(previousPosition)
+            notifyItemChanged(_selectedPosition)
+        }
+
+        (holder as BottomSheetViewHolder).bind(items[position].typeName)
+    }
+
+    fun getActivityType(): ActivityType {
+        return items[_selectedPosition]
     }
 }

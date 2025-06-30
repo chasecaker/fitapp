@@ -3,26 +3,40 @@ package ru.fefu.helloworld.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.commit
+import androidx.lifecycle.ViewModelProvider
+import androidx.lifecycle.viewmodel.initializer
+import androidx.lifecycle.viewmodel.viewModelFactory
 import ru.fefu.helloworld.R
+import ru.fefu.helloworld.data.db.DatabaseProvider
+import ru.fefu.helloworld.data.repository.ActivityRepository
 import ru.fefu.helloworld.databinding.ActivityActivityBinding
 import ru.fefu.helloworld.features.activities_list.ActivityFragment
 import ru.fefu.helloworld.features.profile.ProfileFragment
 
-object ActivityFragmentsTags {
-    const val ACTIVITY_FRAGMENT = "ActivityFragment"
-    const val PROFILE_FRAGMENT = "ProfileFragment"
-}
 
     class ActivityActivity : AppCompatActivity() {
         private var _binding: ActivityActivityBinding? = null
         private val binding
             get() = _binding ?: throw IllegalStateException("ActivityActivityBinding is null")
 
+        private val _activityViewModelFactory: ViewModelProvider.Factory by lazy {
+            val activityDao = DatabaseProvider.getDatabase(applicationContext).activityDao()
+            val repository = ActivityRepository(activityDao)
+
+            viewModelFactory {
+                initializer {
+                    ActivityViewModel(repository)
+                }
+            }
+        }
+
+        fun provideActivityViewModelFactory(): ViewModelProvider.Factory = _activityViewModelFactory
+
         private fun switchToProfileFragment() {
             val activityFragment =
-                supportFragmentManager.findFragmentByTag(ActivityFragmentsTags.ACTIVITY_FRAGMENT)
+                supportFragmentManager.findFragmentByTag(ActivityFragment.FRAGMENT_TAG)
             val profileFragment =
-                supportFragmentManager.findFragmentByTag(ActivityFragmentsTags.PROFILE_FRAGMENT)
+                supportFragmentManager.findFragmentByTag(ProfileFragment.FRAGMENT_TAG)
 
             supportFragmentManager.commit {
                 if (activityFragment != null) {
@@ -33,8 +47,8 @@ object ActivityFragmentsTags {
                     this.show(profileFragment)
                 } else {
                     add(
-                            R.id.fragmentContainerView, ProfileFragment(),
-                        ActivityFragmentsTags.PROFILE_FRAGMENT
+                        R.id.fragmentContainerView, ProfileFragment(),
+                        ProfileFragment.FRAGMENT_TAG
                     )
                 }
             }
@@ -42,9 +56,9 @@ object ActivityFragmentsTags {
 
         private fun switchToActivityFragment() {
             val activityFragment =
-                supportFragmentManager.findFragmentByTag(ActivityFragmentsTags.ACTIVITY_FRAGMENT)
+                supportFragmentManager.findFragmentByTag(ActivityFragment.FRAGMENT_TAG)
             val profileFragment =
-                supportFragmentManager.findFragmentByTag(ActivityFragmentsTags.PROFILE_FRAGMENT)
+                supportFragmentManager.findFragmentByTag(ProfileFragment.FRAGMENT_TAG)
 
             supportFragmentManager.commit {
                 if (profileFragment != null) {
@@ -55,8 +69,8 @@ object ActivityFragmentsTags {
                     this.show(activityFragment)
                 } else {
                     add(
-                            R.id.fragmentContainerView, ActivityFragment(),
-                        ActivityFragmentsTags.ACTIVITY_FRAGMENT
+                        R.id.fragmentContainerView, ActivityFragment(),
+                        ActivityFragment.FRAGMENT_TAG
                     )
                 }
             }
@@ -67,8 +81,8 @@ object ActivityFragmentsTags {
                 if (savedInstanceState == null) {
                     supportFragmentManager.beginTransaction()
                         .add(
-                                R.id.fragmentContainerView,  ActivityFragment(),
-                            ActivityFragmentsTags.ACTIVITY_FRAGMENT
+                            R.id.fragmentContainerView,  ActivityFragment(),
+                            ActivityFragment.FRAGMENT_TAG
                         )
                         .commit()
                 }

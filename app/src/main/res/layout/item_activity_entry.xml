@@ -8,35 +8,24 @@
     android:background="@color/white">
 
     <TextView
+        style="@style/TextMainParameterStyle"
         android:id="@+id/tvDistance"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/inter_bold"
         android:text="14.32км"
-        android:textColor="@color/black"
-        android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/TextStyle"
         android:id="@+id/tvUser"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="16sp"
-        android:fontFamily="@font/inter_regular"
         android:textColor="@color/blue"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        style="@style/TextStyle"
         android:id="@+id/tvTimeDuration"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:layout_marginTop="4dp"
-        android:fontFamily="@font/inter_regular"
         android:text="2 часа 46 минут"
-        android:textColor="@color/text_dark"
-        android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
 
@@ -47,31 +36,20 @@
         app:layout_constraintTop_toBottomOf="@+id/tvTimeDuration">
 
         <TextView
+            style="@style/TextStyle"
             android:id="@+id/tvActivityName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Серфинг 🏄"
-            android:textSize="16sp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/text_dark"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tvTimeOver"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            style="@style/TextAdditionalParameterStyle"
+            android:id="@+id/tvTimeFinishAgo"
             android:text="14 часов назад"
-            android:textSize="16sp"
-            android:fontFamily="@font/inter_regular"
-            android:textColor="@color/text_grey"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,24 +22,24 @@
 
         <TextView
             style="@style/TextHeaderStyle"
+            android:id="@+id/tvActivityName"
             android:layout_marginStart="16dp"
-            android:text="Велосипед"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/ic_go_back"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             style="@style/IconStyle"
-            android:id="@+id/iv_delete"
+            android:id="@+id/ic_delete"
             android:layout_marginEnd="20dp"
             android:src="@drawable/ic_trash"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/iv_share"
+            app:layout_constraintEnd_toStartOf="@+id/ic_share"
             app:layout_constraintTop_toTopOf="parent" />
 
         <ImageView
             style="@style/IconStyle"
-            android:id="@+id/iv_share"
+            android:id="@+id/ic_share"
             android:src="@drawable/ic_share"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -58,7 +58,6 @@
         <TextView
             style="@style/TextStyle"
             android:id="@+id/tvUser"
-            android:text="@chasecaker"
             android:textColor="@color/blue"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -67,25 +66,22 @@
             style="@style/TextMainParameterStyle"
             android:id="@+id/tvDistance"
             android:layout_marginTop="24dp"
-            android:text="14.32км"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvUser" />
 
         <TextView
             style="@style/TextAdditionalParameterStyle"
-            android:id="@+id/tvTimeDuration"
+            android:id="@+id/tvTimeFinishAgo"
             android:layout_marginTop="4dp"
-            android:text="14 часов назад"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tvDistance" />
 
         <TextView
             style="@style/TextMainParameterStyle"
-            android:id="@+id/textView5"
+            android:id="@+id/tvTimeDuration"
             android:layout_marginTop="24dp"
-            android:text="1ч 42 мин"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvTimeDuration" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeFinishAgo" />
 
         <LinearLayout
             android:id="@+id/linearLayout7"
@@ -93,7 +89,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="4dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView5">
+            app:layout_constraintTop_toBottomOf="@+id/tvTimeDuration">
 
             <TextView
                 style="@style/TextStyle"
@@ -101,8 +97,8 @@
 
             <TextView
                 style="@style/TextAdditionalParameterStyle"
-                android:layout_marginStart="8sp"
-                android:text="14:49" />
+                android:id="@+id/tvTimeStart"
+                android:layout_marginStart="8sp" />
 
             <TextView
                 style="@style/TextStyle"
@@ -116,7 +112,7 @@
 
             <TextView
                 style="@style/TextAdditionalParameterStyle"
-                android:text="16:31" />
+                android:id="@+id/tvTimeFinish" />
         </LinearLayout>
 
         <com.google.android.material.textfield.TextInputLayout

@@ -1,5 +1,6 @@
 package ru.fefu.helloworld.features.activities_list
 
+import android.annotation.SuppressLint
 import android.graphics.Paint
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -8,9 +9,9 @@ import ru.fefu.helloworld.databinding.ItemActivityEntryBinding
 import ru.fefu.helloworld.databinding.ItemDateHeaderBinding
 
 class ActivityAdapter(
-    val isMy: Boolean,
-    private val items: List<ActivityItem>,
-    private val onActivityClick: () -> Unit
+    var isMy: Boolean,
+    private var items: List<ActivityItem>  = emptyList(),
+    private val onActivityClick: (activityId: Int) -> Unit
 ): RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         private const val VIEW_TYPE_DATE = 0
@@ -26,18 +27,18 @@ class ActivityAdapter(
 
     class ActivityViewHolder(
         private val binding: ItemActivityEntryBinding,
-        private val onActivityClick: () -> Unit
+        private val onActivityClick: (activityId: Int) -> Unit
     ): RecyclerView.ViewHolder(binding.root) {
         fun bind(item: ActivityItem.ActivityEntry) {
             with(binding) {
                 root.setOnClickListener {
-                    onActivityClick()
+                    onActivityClick(item.id)
                 }
 
                 tvDistance.text = item.distance
                 tvTimeDuration.text = item.timeDuration
                 tvActivityName.text = item.activityName
-                tvTimeOver.text = item.timeOver
+                tvTimeFinishAgo.text = item.timeFinishAgo
 
                 tvUser.text = item.user
                 tvUser.paintFlags = Paint.UNDERLINE_TEXT_FLAG
@@ -77,5 +78,10 @@ class ActivityAdapter(
             is ActivityItem.DateHeader -> (holder as DateViewHolder).bind(item)
             is ActivityItem.ActivityEntry -> (holder as ActivityViewHolder).bind(item)
         }
+    }
+    @SuppressLint("NotifyDataSetChanged")
+    fun updateItems(newItems: List<ActivityItem>) {
+        items = newItems
+        notifyDataSetChanged()
     }
 }

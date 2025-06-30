@@ -52,6 +52,7 @@
                     android:layout_marginHorizontal="16dp"
                     android:layout_marginVertical="32dp"
                     android:text="@string/btn_start"
+                    app:backgroundTint="@color/blue"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -66,7 +67,7 @@
                 android:visibility="gone">
 
                 <TextView
-                    android:id="@+id/textView6"
+                    android:id="@+id/tvActivityName"
                     style="@style/TextMainParameterStyle"
                     android:layout_marginTop="32dp"
                     android:text="Велосипед"
@@ -80,7 +81,7 @@
                     android:layout_marginTop="8dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@+id/textView6">
+                    app:layout_constraintTop_toBottomOf="@+id/tvActivityName">
 
                     <TextView
                         android:id="@+id/textView7"

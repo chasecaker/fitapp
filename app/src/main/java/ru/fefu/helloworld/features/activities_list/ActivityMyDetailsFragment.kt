@@ -9,6 +9,12 @@ class ActivityMyDetailsFragment: ActivityDetailsFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with (super.binding) {
+            icDelete.setOnClickListener {
+                if (activityId != null) {
+                    activityViewModel.deleteActivityById(activityId!!)
+                }
+                parentFragmentManager.popBackStack()
+            }
             tvUser.visibility = View.GONE
 
             val params = tvDistance.layoutParams as MarginLayoutParams

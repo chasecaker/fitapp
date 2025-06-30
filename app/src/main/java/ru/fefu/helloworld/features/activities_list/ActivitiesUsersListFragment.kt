@@ -11,31 +11,47 @@ class ActivitiesUsersListFragment: ActivitiesBaseListFragment() {
         val data = listOf(
             ActivityItem.DateHeader("Вчера"),
             ActivityItem.ActivityEntry(
-                "14.32 км",
-                "2 часа 46 минут",
+
+                1,
+
                 "Серфинг",
+                "14.32 км",
                 "14 часов назад",
-                user = "@chasecaker"
+                "11:00",
+                "13:46",
+                "2 часа 46 минут",
+                "@chasecaker"
 
             ),
             ActivityItem.ActivityEntry(
+
+                2,
+
+
+                "Ходьба",
                 "228 м",
-                "14 часов 48 минут",
-                "Йога",
                 "14 часов назад",
-                user = "@haski"
+                "9:00",
+                "19:20",
+                "10 часов 20 минут",
+                "@haski"
             ),
             ActivityItem.ActivityEntry(
-                "10 км",
-                "1 час 10 минут",
+
+                3,
+
                 "Бег по набережной",
-                "14 часов назад",
-                user = "@elon_mask"
+                "10 км",
+                "15 часов назад",
+                "15:20",
+                "18:22",
+                "3 часа 2 минуты",
+                "@elon_mask"
             )
         )
 
-        super.adapter = ActivityAdapter(false, data) {
-            super.onActivityClick()
+        super.adapter = ActivityAdapter(false, data) { activityId ->
+            super.onActivityClick(activityId)
         }
 
         super.binding.rvActivitiesList.layoutManager = LinearLayoutManager(requireContext())

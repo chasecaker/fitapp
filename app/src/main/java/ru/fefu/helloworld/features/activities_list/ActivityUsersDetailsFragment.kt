@@ -14,9 +14,9 @@ class ActivityUsersDetailsFragment: ActivityDetailsFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         with (super.binding) {
-            ivDelete.isVisible = false
+            icDelete.isVisible = false
 
-            ivShare.isVisible = false
+            icShare.isVisible = false
 
             tvUser.paintFlags = Paint.UNDERLINE_TEXT_FLAG
 

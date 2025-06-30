@@ -6,6 +6,7 @@
     <color name="red">#B00020</color>
 
     <color name="border_grey">#CDCFD4</color>
+    <color name="border_card_grey">#E0E0E0</color>
 
     <color name="background_grey">#F0F0F0</color>
     <color name="background_text_input_grey">#F5F5F5</color>
